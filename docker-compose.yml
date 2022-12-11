@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  backend:
+    container_name: backend
+    build: ./backend/docker
+    tty: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: ./backend
+        target: /backend
+  frontend:
+    container_name: frontend
+    build: ./frontend/docker
+    tty: true
+    ports:
+      - "8000:3000"
+    volumes:
+      - type: bind
+        source: ./frontend
+        target: /frontend
