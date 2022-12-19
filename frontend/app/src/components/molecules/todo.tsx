@@ -8,7 +8,7 @@ import '../../css/todo.css'
 type Props = {
   todo : todo,
   deleteTodo : (id:number) => void,
-  checkTodo : (id:number) => void
+  checkTodo : (id:number,checked:boolean) => void
 }
 
 const Component: React.FC<Props> = props => {
@@ -19,7 +19,7 @@ const Component: React.FC<Props> = props => {
                 type="checkbox"
                 defaultChecked={props.todo.checked}
                 label= {props.todo.content}
-                onChange={()=>props.checkTodo(props.todo.id)}
+                onChange={(e)=>props.checkTodo(props.todo.id,e.target.checked)}
                 />
             </Col>
             <Col>
