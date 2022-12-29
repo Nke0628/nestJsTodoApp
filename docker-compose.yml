@@ -10,6 +10,7 @@ services:
       - type: bind
         source: ./backend
         target: /backend
+    command: bash -c "npm start"
   frontend:
     container_name: frontend
     build: ./frontend/docker
@@ -20,3 +21,4 @@ services:
       - type: bind
         source: ./frontend
         target: /frontend
+    command: sh -c "cd app && npm start"
